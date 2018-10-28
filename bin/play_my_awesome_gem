@@ -1,14 +1,17 @@
 #!/usr/bin/env ruby
 
 require 'my_awesome_gem'
+require 'highline/import'
 
 if ARGV.include?('-v')
   puts MyAwesomeGem::VERSION
   exit
 end
 
-puts "How many say hello you want to print?"
-numbers_of_say_hello = gets.chomp.to_i
+# puts "How many say hello you want to print?"
+# numbers_of_say_hello = gets.chomp.to_i
+
+numbers_of_say_hello = ask('How many say hello you want to print?', Integer)
 
 who = MyAwesomeGem::Whois.new
 
