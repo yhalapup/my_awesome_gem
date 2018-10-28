@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+
+require 'my_awesome_gem'
+
+puts "How many say hello you want to print?"
+numbers_of_say_hello = gets.chomp.to_i
+
+who = MyAwesomeGem::Whois.new
+
+(1..numbers_of_say_hello).each do |greeting|
+  who.say_hello
+end
+
+MyAwesomeGem::Whois.awesome?
