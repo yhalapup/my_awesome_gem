@@ -2,6 +2,11 @@
 
 require 'my_awesome_gem'
 
+if ARGV.include?('-v')
+  puts MyAwesomeGem::VERSION
+  exit
+end
+
 puts "How many say hello you want to print?"
 numbers_of_say_hello = gets.chomp.to_i
 
